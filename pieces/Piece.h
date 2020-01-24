@@ -1,6 +1,7 @@
 #ifndef PIECE_H
 #define PIECE_H
 #include "GamePlay.h"
+#include "Position.h"
 #define A 0
 #define B 1
 #define C 2
@@ -39,6 +40,7 @@ class Piece{
 
         virtual void draw(bool side_piece = false, float x = 0.0f, float y = 0.0f);
 	    virtual void listMoves(void);
+	    virtual std::vector<Position*> getPossibleMoves();
         virtual void move(unsigned int col, unsigned int row);
         virtual void move(char col, unsigned int row);
 

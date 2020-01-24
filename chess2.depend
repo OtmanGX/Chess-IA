@@ -9,7 +9,7 @@
 	<GL/freeglut.h>
 	<SOIL/SOIL.h>
 
-1579814221 source:/home/otmangx/Dev/c++/opengl/chess2/main.cpp
+1579886605 source:/home/otmangx/Dev/c++/opengl/chess2/main.cpp
 	"Piece.h"
 	"Cavalier.h"
 	"Roi.h"
@@ -17,14 +17,16 @@
 	"Dame.h"
 	"Pion.h"
 	"Fou.h"
+	"AlphaBetaPruning.h"
 	"iostream"
 
-1579813152 /home/otmangx/Dev/c++/opengl/chess2/pieces/Piece.h
+1579889921 /home/otmangx/Dev/c++/opengl/chess2/pieces/Piece.h
 	"GamePlay.h"
+	"Position.h"
 
 1579553376 /home/otmangx/Dev/c++/opengl/chess2/textfile.h
 
-1579786752 /home/otmangx/Dev/c++/opengl/chess2/include/GamePlay.h
+1579892469 /home/otmangx/Dev/c++/opengl/chess2/include/GamePlay.h
 	<GL/glew.h>
 	<GL/freeglut.h>
 	"../textfile.h"
@@ -50,19 +52,19 @@
 1579814157 /home/otmangx/Dev/c++/opengl/chess2/pieces/Fou.h
 	"Piece.h"
 
-1579813181 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Piece.cpp
+1579877610 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Piece.cpp
 	"Piece.h"
 	"GamePlay.h"
 	<iostream>
 
-1579814078 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Pion.cpp
+1579892364 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Pion.cpp
 	"Pion.h"
 	"Dame.h"
 
-1579814170 /home/otmangx/Dev/c++/opengl/chess2/pieces/Pion.h
+1579891341 /home/otmangx/Dev/c++/opengl/chess2/pieces/Pion.h
 	"Piece.h"
 
-1579788767 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Roi.cpp
+1579864601 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Roi.cpp
 	"Roi.h"
 
 1579814186 /home/otmangx/Dev/c++/opengl/chess2/pieces/Roi.h
@@ -74,7 +76,7 @@
 1579814201 /home/otmangx/Dev/c++/opengl/chess2/pieces/Tour.h
 	"Piece.h"
 
-1579786699 source:/home/otmangx/Dev/c++/opengl/chess2/src/GamePlay.cpp
+1579885816 source:/home/otmangx/Dev/c++/opengl/chess2/src/GamePlay.cpp
 	"GamePlay.h"
 	"Piece.h"
 
@@ -88,4 +90,24 @@
 
 1579814844 /home/otmangx/Dev/c++/opengl/chess2/include/IA.h
 	"GamePlay.h"
+
+1579884905 source:/home/otmangx/Dev/c++/opengl/chess2/src/Position.cpp
+	"Position.h"
+
+1579884914 /home/otmangx/Dev/c++/opengl/chess2/include/Position.h
+
+1579889321 source:/home/otmangx/Dev/c++/opengl/chess2/src/AlphaBetaPruning.cpp
+	"AlphaBetaPruning.h"
+	<iostream>
+	"evaluate.h"
+	<iostream>
+
+1579884153 /home/otmangx/Dev/c++/opengl/chess2/include/AlphaBetaPruning.h
+	"Position.h"
+	"Piece.h"
+
+1579882866 /home/otmangx/Dev/c++/opengl/chess2/include/evaluate.h
+	<string>
+	<vector>
+	<map>
 

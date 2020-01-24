@@ -21,7 +21,7 @@ void Roi::listMoves(void){
 }
 
 void Roi::move(unsigned int col, unsigned int row){
-    game->grid_pieces[c_Row-1][c_Col-1] = 0;
+    game->board[c_Row-1][c_Col-1] = 0;
     if(c_Col-col == 2){
         if(color == WHITE){
             game->piece_at(1,1)->move((unsigned int)4,(unsigned int)1);
@@ -38,6 +38,6 @@ void Roi::move(unsigned int col, unsigned int row){
     c_Col = col;
     c_Row = row;
     c_Column = column[col-1];
-    game->grid_pieces[c_Row-1][c_Col-1] = color;
+    game->board[c_Row-1][c_Col-1] = color;
     has_moved = true;
 }

@@ -39,8 +39,10 @@
 			<Add library="GL" />
 			<Add library="X11" />
 		</Linker>
+		<Unit filename="include/AlphaBetaPruning.h" />
 		<Unit filename="include/GamePlay.h" />
 		<Unit filename="include/IA.h" />
+		<Unit filename="include/Position.h" />
 		<Unit filename="loaders.cpp" />
 		<Unit filename="loaders.h" />
 		<Unit filename="main.cpp" />
@@ -58,8 +60,10 @@
 		<Unit filename="pieces/Roi.h" />
 		<Unit filename="pieces/Tour.cpp" />
 		<Unit filename="pieces/Tour.h" />
+		<Unit filename="src/AlphaBetaPruning.cpp" />
 		<Unit filename="src/GamePlay.cpp" />
 		<Unit filename="src/IA.cpp" />
+		<Unit filename="src/Position.cpp" />
 		<Unit filename="textfile.cpp" />
 		<Unit filename="textfile.h" />
 		<Extensions>

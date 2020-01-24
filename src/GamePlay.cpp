@@ -3,11 +3,18 @@
 
 GLuint p,f,v,tile;
 
-GamePlay::GamePlay()
+GamePlay::GamePlay(bool ia)
 {
-
+this->ia = ia;
 }
 
+GamePlay::GamePlay(const GamePlay& T)
+{
+gamestate = T.gamestate;
+pieces = T.pieces;
+for (int i=0;i<8;i++)
+for (int j=0;j<8;j++) board[i][j]=T.board[i][j];
+}
 
 void GamePlay::initDLs(void){
     printf("%i\n",A);
@@ -118,13 +125,13 @@ void GamePlay::remove_piece(int col, int row){
     side_pieces.push_back(temp);
     if(it != pieces.end()){
         pieces.erase(it);
-        grid_pieces[row-1][col-1] = 0;
+        board[row-1][col-1] = 0;
     }
 }
 
 
 bool GamePlay::checkSquare(int col, int row){
-    if(grid_pieces[row-1][col-1] >= 1){
+    if(board[row-1][col-1] >= 1){
         return true;
     }
     return false;
@@ -140,7 +147,7 @@ int GamePlay::get_index(int col, int row){
 }
 
 void GamePlay::highlight_tile(int col, int row,unsigned int tile, bool captured_mode){
-    if((col <= 8 && row <= 8 && col > 0 && row > 0) && ((gamestate == WHITE_TURN && grid_pieces[row-1][col-1] != WHITE) ||(gamestate == BLACK_TURN && grid_pieces[row-1][col-1] != BLACK))){
+    if((col <= 8 && row <= 8 && col > 0 && row > 0) && ((gamestate == WHITE_TURN && board[row-1][col-1] != WHITE) ||(gamestate == BLACK_TURN && board[row-1][col-1] != BLACK))){
         highlighted_tiles[tile][0] = row;
         highlighted_tiles[tile][1] = col;
     }
@@ -153,6 +160,28 @@ void GamePlay::highlight_tile_k(int col, int row,unsigned int tile, bool capture
 void GamePlay::clearMovesList(void){
     memset(highlighted_tiles,0,sizeof(highlighted_tiles[0][0])*(sizeof(highlighted_tiles)/sizeof(highlighted_tiles[0]))*2); //clear the array
 }
+
+bool GamePlay::isCheckMate() {
+    int count = 0;
+	Piece* actPiece;
+	for(int row =0; row <=7; row++)
+	{
+		for(int col =0;col <=7; col++)
+		{
+			if(this->checkSquare(col, row))
+			{
+				actPiece = this->piece_at(col, row);
+				if(actPiece->color == WHITE && this->gamestate==WHITE_TURN | actPiece->color == BLACK && this->gamestate==BLACK_TURN)
+				{
+					count+=actPiece->getPossibleMoves().size();
+				}
+			}
+		}
+	}
+	if (count==0) return true;
+	return false;
+}
+
 
 GamePlay::~GamePlay()
 {

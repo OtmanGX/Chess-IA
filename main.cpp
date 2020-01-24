@@ -5,6 +5,7 @@
 #include "Dame.h"
 #include "Pion.h"
 #include "Fou.h"
+#include "AlphaBetaPruning.h"
 #include "iostream"
 //Window size and position
 #define WINDOW_WIDTH 800
@@ -70,11 +71,16 @@ void mainMenu() {
     showWord(-150, 0, "** Appuyez sur X Pour sortir");
 }
 
+void newGameMenu() {
+    showWord(-150, 100, "** H Pour Human vs Human");
+    showWord(-150, 50, "** I Pour Human vs IA");
+}
+
 //helper function to print grid 2d array variable
 void print_grid_pieces(void){
     for(int row = 0; row <= 7; row++){
         for(int col = 0; col <= 7; col++){
-            int element = game->grid_pieces[row][col];
+            int element = game->board[row][col];
             if(element > 0){
                 printf("[%i]",element);
             }else if(element == 0){
@@ -172,7 +178,7 @@ void resize(int w, int h){
 void draw(void){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     if (inGame) {
-    initGL();
+//    initGL();
     glLoadIdentity();
     gluLookAt(0,25,15,
     0,0,0,
@@ -205,7 +211,8 @@ void keyEvents(unsigned char key, int x, int y){
             break;
         case 'n':
         case 'N':
-        if (!inGame) newGame();
+        newGameMenu();
+//        if (!inGame) newGame();
         break;
         case 'x':
         case 'X':
@@ -237,11 +244,21 @@ void pickPiece(int col, int row){
 
 //swaps turns from white to black or black to white
 void swap_turns(void){
-    if(game->gamestate == WHITE_TURN){
-        game->gamestate = BLACK_TURN;
-    }else if(game->gamestate == BLACK_TURN){
-        game->gamestate = WHITE_TURN;
-    }
+        if(game->gamestate == WHITE_TURN){
+            game->gamestate = BLACK_TURN;
+        }else if(game->gamestate == BLACK_TURN){
+            game->gamestate = WHITE_TURN;
+        }
+}
+
+void playIaTurn() {
+    int xdest = 0 , ydest = 0;
+    AlphaBetaPruning* ab = new AlphaBetaPruning(*game, xdest, ydest);
+    Position* p = ab->getOptimalMove();
+    Piece* piece =game->piece_at(p->x, p->y);
+    piece->move(p->x+1, p->y+1);
+    game->clearMovesList();
+    swap_turns();
 }
 
 //processes which piece is clicked and which tile is clicked
@@ -267,12 +284,13 @@ void list_hits(GLint hits, GLuint *names){
         }
     }
     if(move_pressed){
-        if((game->grid_pieces[grid_row-1][grid_col-1] == BLACK && game->gamestate == WHITE_TURN) || (game->grid_pieces[grid_row-1][grid_col-1] == WHITE && game->gamestate == BLACK_TURN)) //if the possible move is a capture move
+        if((game->board[grid_row-1][grid_col-1] == BLACK && game->gamestate == WHITE_TURN) || (game->board[grid_row-1][grid_col-1] == WHITE && game->gamestate == BLACK_TURN)) //if the possible move is a capture move
             game->remove_piece(grid_col,grid_row); //... then remove the piece that's eaten
         selected_piece->move((unsigned int)grid_col,(unsigned int)grid_row);
         swap_turns();
         game->clearMovesList();
         selected_piece->unpick();
+        if (game->ia && game->gamestate==BLACK_TURN) playIaTurn();
     }
     pickPiece(grid_col,grid_row);
 }

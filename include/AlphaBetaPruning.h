@@ -1,11 +1,13 @@
 #ifndef ALPHABETAPRUNING_H
 #define ALPHABETAPRUNING_H
-#include "GamePlay.h"
 #include "Position.h"
+#include "Piece.h"
+
+class GamePlay;
 
 class AlphaBetaPruning{
 public:
-	AlphaBetaPruning(GamePlay& board, int& xdest, int& ydest);
+	AlphaBetaPruning(GamePlay& game, int& xdest, int& ydest);
 	~AlphaBetaPruning();
 
 
@@ -13,9 +15,14 @@ public:
 		return bestPosition;
 	}
 
+	int getPieceValue(Piece* p, int x, int y);
+	int getAbsuluteValue(Piece* p,bool isWhite,int x,int y);
+	int evaluateBoard(GamePlay& game);
+
 private:
-	Position* alphaBeta(GamePlay& board, int& xdest, int& ydest);
-	int alphaBeta(GamePlay& board, int depth, int alpha, int beta, bool cpuTurn);
+    GamePlay game;
+	Position* alphaBeta(GamePlay& game, int& xdest, int& ydest);
+	int alphaBeta(GamePlay& game, int depth, int alpha, int beta, bool cpuTurn);
 	Position* bestPosition;
 
 	int max(int x, int y);

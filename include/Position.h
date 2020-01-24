@@ -2,8 +2,8 @@
 class Position
 {
 public:
-	Position(int x, int y);
+	Position(unsigned int x, unsigned int y);
 	~Position();
-	int x, y;
+	unsigned int x, y;
 };
 

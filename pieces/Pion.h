@@ -15,6 +15,7 @@ class Pion : public Piece {
         void listMoves(void);
         void move(unsigned int col, unsigned int row);
         void check_promotion(void);
+        std::vector<Position*> getPossibleMoves();
 };
 
 #endif // PION_H

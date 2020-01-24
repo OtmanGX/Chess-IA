@@ -7,7 +7,6 @@
 #include <vector>
 #include <algorithm>
 
-
 extern GLuint p,f,v,tile;
 
 class Piece;
@@ -18,13 +17,14 @@ enum GAMESTATE : int{
 class GamePlay
 {
     public:
-        int grid_pieces[8][8]={0},highlighted_tiles[56][2]={0};
+        int board[8][8]={0},highlighted_tiles[56][2]={0};
         GAMESTATE gamestate; //enum which stores current state, like player turns and menu
-//        GLuint p,f,v, ; //program, frag shader, vert shader
+        bool ia = false;
         std::vector<Piece*> pieces,side_pieces;
         float angle = 0.0f;
         //methods
-        GamePlay();
+        GamePlay(bool ia=false);
+        GamePlay(const GamePlay&);
         void initDLs(void);
         void drawGrid(void);
         Piece* piece_at(int col, int row);
@@ -34,6 +34,7 @@ class GamePlay
         void highlight_tile(int col, int row,unsigned int tile, bool captured_mode = false);
         void highlight_tile_k(int col, int row,unsigned int tile, bool captured_mode = false);
         void clearMovesList(void);
+        bool isCheckMate();
         virtual ~GamePlay();
 
     protected:
