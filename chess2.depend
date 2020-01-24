@@ -1,0 +1,91 @@
+# depslib dependency file v1.0
+1579553376 source:/home/otmangx/Dev/c++/opengl/chess2/loaders.cpp
+	"loaders.h"
+
+1579553376 /home/otmangx/Dev/c++/opengl/chess2/loaders.h
+	<assimp/Importer.hpp>
+	<assimp/scene.h>
+	<assimp/postprocess.h>
+	<GL/freeglut.h>
+	<SOIL/SOIL.h>
+
+1579814221 source:/home/otmangx/Dev/c++/opengl/chess2/main.cpp
+	"Piece.h"
+	"Cavalier.h"
+	"Roi.h"
+	"Tour.h"
+	"Dame.h"
+	"Pion.h"
+	"Fou.h"
+	"iostream"
+
+1579813152 /home/otmangx/Dev/c++/opengl/chess2/pieces/Piece.h
+	"GamePlay.h"
+
+1579553376 /home/otmangx/Dev/c++/opengl/chess2/textfile.h
+
+1579786752 /home/otmangx/Dev/c++/opengl/chess2/include/GamePlay.h
+	<GL/glew.h>
+	<GL/freeglut.h>
+	"../textfile.h"
+	"../loaders.h"
+	<vector>
+	<algorithm>
+
+1579788149 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Cavalier.cpp
+	"Cavalier.h"
+
+1579814127 /home/otmangx/Dev/c++/opengl/chess2/pieces/Cavalier.h
+	"Piece.h"
+
+1579813114 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Dame.cpp
+	"Dame.h"
+
+1579814145 /home/otmangx/Dev/c++/opengl/chess2/pieces/Dame.h
+	"Piece.h"
+
+1579788554 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Fou.cpp
+	"Fou.h"
+
+1579814157 /home/otmangx/Dev/c++/opengl/chess2/pieces/Fou.h
+	"Piece.h"
+
+1579813181 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Piece.cpp
+	"Piece.h"
+	"GamePlay.h"
+	<iostream>
+
+1579814078 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Pion.cpp
+	"Pion.h"
+	"Dame.h"
+
+1579814170 /home/otmangx/Dev/c++/opengl/chess2/pieces/Pion.h
+	"Piece.h"
+
+1579788767 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Roi.cpp
+	"Roi.h"
+
+1579814186 /home/otmangx/Dev/c++/opengl/chess2/pieces/Roi.h
+	"Piece.h"
+
+1579788645 source:/home/otmangx/Dev/c++/opengl/chess2/pieces/Tour.cpp
+	"Tour.h"
+
+1579814201 /home/otmangx/Dev/c++/opengl/chess2/pieces/Tour.h
+	"Piece.h"
+
+1579786699 source:/home/otmangx/Dev/c++/opengl/chess2/src/GamePlay.cpp
+	"GamePlay.h"
+	"Piece.h"
+
+1579553376 source:/home/otmangx/Dev/c++/opengl/chess2/textfile.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1579814743 source:/home/otmangx/Dev/c++/opengl/chess2/src/IA.cpp
+	"IA.h"
+
+1579814844 /home/otmangx/Dev/c++/opengl/chess2/include/IA.h
+	"GamePlay.h"
+

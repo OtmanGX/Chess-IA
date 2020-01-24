@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="chess2" />
+		<Option pch_mode="2" />
+		<Option compiler="gnu_gcc_compiler_opengl" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/chess2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_compiler_opengl" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+					<Add directory="pieces" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/chess2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gnu_gcc_compiler_opengl" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+					<Add directory="pieces" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add library="GL" />
+			<Add library="X11" />
+		</Linker>
+		<Unit filename="include/GamePlay.h" />
+		<Unit filename="include/IA.h" />
+		<Unit filename="loaders.cpp" />
+		<Unit filename="loaders.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="pieces/Cavalier.cpp" />
+		<Unit filename="pieces/Cavalier.h" />
+		<Unit filename="pieces/Dame.cpp" />
+		<Unit filename="pieces/Dame.h" />
+		<Unit filename="pieces/Fou.cpp" />
+		<Unit filename="pieces/Fou.h" />
+		<Unit filename="pieces/Piece.cpp" />
+		<Unit filename="pieces/Piece.h" />
+		<Unit filename="pieces/Pion.cpp" />
+		<Unit filename="pieces/Pion.h" />
+		<Unit filename="pieces/Roi.cpp" />
+		<Unit filename="pieces/Roi.h" />
+		<Unit filename="pieces/Tour.cpp" />
+		<Unit filename="pieces/Tour.h" />
+		<Unit filename="src/GamePlay.cpp" />
+		<Unit filename="src/IA.cpp" />
+		<Unit filename="textfile.cpp" />
+		<Unit filename="textfile.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
