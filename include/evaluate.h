@@ -1,8 +1,5 @@
 #ifndef EVALUATE_H_INCLUDED
 #define EVALUATE_H_INCLUDED
-#include <string>
-#include <vector>
-#include <map>
 
 #define KingWt 1300
 #define QueenWt 900
@@ -136,55 +133,6 @@ const int bPawnTable[8][8] = {
      50, 50, 50, 50, 50, 50, 50, 50,
       0,  0,  0,  0,  0,  0,  0,  0
 };
-
-
-//double material_score(map<char, int>& m){
-//
-//    double black = PawnWt*m['p'] + KnightWt*m['n'] + BishopWt*m['b'] + RookWt*m['r'] + QueenWt*m['q'] + KingWt*m['k'];
-//    double white = PawnWt*m['P'] + KnightWt*m['N'] + BishopWt*m['B'] + RookWt*m['R'] + QueenWt*m['Q'] + KingWt*m['K'];
-//
-//    return (white - black);
-//}
-//
-//
-//double static_eval(Node& root){
-//    double score = material_score(root->materials);
-//    int i, j;
-//    for(i=2; i<10; i++){
-//        for(j=2; j<10; j++){
-//            char c = root->board[i][j];
-//
-//            // White's pieces
-//            if('K' == c)
-//                score += wKingTableMid[i-2][j-2];
-//            if('Q' == c)
-//                score += wQueenTable[i-2][j-2];
-//            if('R' == c)
-//                score += wRookTable[i-2][j-2];
-//            if('B' == c)
-//                score += wBishopTable[i-2][j-2];
-//            if('N' == c)
-//                score += wKnightTable[i-2][j-2];
-//            if('P' == c)
-//                score += wPawnTable[i-2][j-2];
-//
-//            // Black's pieces
-//            if('k' == c)
-//                score -= bKingTableMid[i-2][j-2];
-//            if('q' == c)
-//                score -= bQueenTable[i-2][j-2];
-//            if('r' == c)
-//                score -= bRookTable[i-2][j-2];
-//            if('b' == c)
-//                score -= bBishopTable[i-2][j-2];
-//            if('n' == c)
-//                score -= bKnightTable[i-2][j-2];
-//            if('p' == c)
-//                score -= bPawnTable[i-2][j-2];
-//        }
-//    }
-//    return score/100;
-//}
 
 
 #endif // EVALUATE_H_INCLUDED

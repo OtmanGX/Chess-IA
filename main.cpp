@@ -27,16 +27,6 @@ bool    check = false, checkMate = false;
 bool    closeGame = false;
 bool	needPromote = false;
 
-/**
-    Variables for perspective function
-*/
-GLfloat     fovy = 50.0, zNear = 0.1, zFar = 20.0;
-/**
-    Variables for managing view
-*/
-GLfloat     screen_ratio, zoomOut = 2;
-
-
 float lpos[4] = {1,0.5,1,0};
 int screen_width = 850,screen_height = 850;
 
@@ -211,8 +201,7 @@ void keyEvents(unsigned char key, int x, int y){
             break;
         case 'n':
         case 'N':
-        newGameMenu();
-//        if (!inGame) newGame();
+        if (!inGame) newGame();
         break;
         case 'x':
         case 'X':
@@ -347,7 +336,7 @@ int main(int argc, char **argv){
     glutInitWindowSize(screen_width, screen_height);
 //    glutInitWindowPosition(WINDOW_POS_X, WINDOW_POS_Y);
     glutInitContextVersion(2, 1);
-    glutCreateWindow("Chess 3D");
+    glutCreateWindow("jeu d'echec 3D");
 //    inGame = true;
     glewExperimental = GL_TRUE;
     glewInit();

@@ -9,7 +9,7 @@
 	<GL/freeglut.h>
 	<SOIL/SOIL.h>
 
-1579886605 source:/home/otmangx/Dev/c++/opengl/chess2/main.cpp
+1579897324 source:/home/otmangx/Dev/c++/opengl/chess2/main.cpp
 	"Piece.h"
 	"Cavalier.h"
 	"Roi.h"
@@ -26,7 +26,7 @@
 
 1579553376 /home/otmangx/Dev/c++/opengl/chess2/textfile.h
 
-1579892469 /home/otmangx/Dev/c++/opengl/chess2/include/GamePlay.h
+1579894728 /home/otmangx/Dev/c++/opengl/chess2/include/GamePlay.h
 	<GL/glew.h>
 	<GL/freeglut.h>
 	"../textfile.h"
@@ -80,7 +80,7 @@
 	"GamePlay.h"
 	"Piece.h"
 
-1579553376 source:/home/otmangx/Dev/c++/opengl/chess2/textfile.cpp
+1579893133 source:/home/otmangx/Dev/c++/opengl/chess2/textfile.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -106,8 +106,5 @@
 	"Position.h"
 	"Piece.h"
 
-1579882866 /home/otmangx/Dev/c++/opengl/chess2/include/evaluate.h
-	<string>
-	<vector>
-	<map>
+1579893044 /home/otmangx/Dev/c++/opengl/chess2/include/evaluate.h
 
